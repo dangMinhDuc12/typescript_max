@@ -1,53 +1,66 @@
-class Person {
-  readonly name: string;
-  private hobbies: string[] = [];
-  protected notify: string = "Person class";
+// /**
+//  * Abstract class: Như 1 bản thiết kế class, các class kế thừa từ class này sẽ phải tạo ra
+//  * các property và methods được gắn tag abstract trước nó.
+//  *
+//  */
 
-  constructor(name: string) {
-    this.name = name;
-  }
+// abstract class Person {
+//   readonly name: string;
+//   private hobbies: string[] = [];
+//   protected notify: string = "Person class";
+//   static job: string = "teacher";
+//   abstract sayHi: string;
 
-  printName() {
-    console.log(`Your name is ${this.name}`);
-  }
+//   constructor(name: string) {
+//     this.name = name;
+//   }
 
-  addHobby(...hobby: string[]) {
-    this.hobbies.push(...hobby);
-  }
+//   printName() {
+//     console.log(`Your name is ${this.name}`);
+//   }
 
-  get hobbiesInfo() {
-    return this.hobbies;
-  }
+//   addHobby(...hobby: string[]) {
+//     this.hobbies.push(...hobby);
+//   }
 
-  set hobbiesInfo(value: string[]) {
-    this.hobbies = value;
-  }
-}
+//   get hobbiesInfo() {
+//     return this.hobbies;
+//   }
 
-class Student extends Person {
-  ability: string;
+//   set hobbiesInfo(value: string[]) {
+//     this.hobbies = value;
+//   }
 
-  constructor(name: string, ability: string) {
-    super(name);
-    this.ability = ability;
-  }
+//   static showJob() {
+//     console.log(this.job);
+//   }
 
-  addHobby(...hobby: string[]) {
-    console.log(this.notify);
-    super.addHobby(...hobby);
-  }
-}
+//   abstract sayHello(): void;
+// }
 
-const maxUser = new Person("Maximillian");
-maxUser.printName();
+// class Student extends Person {
+//   ability: string;
+//   sayHi: string = "hello world";
 
-maxUser.addHobby("game", "sport");
+//   constructor(name: string, ability: string) {
+//     super(name);
+//     this.ability = ability;
+//   }
 
-maxUser.hobbiesInfo = ["code"];
-console.log(maxUser.hobbiesInfo);
+//   addHobby(...hobby: string[]) {
+//     console.log(this.notify);
+//     super.addHobby(...hobby);
+//   }
+//   sayHello() {
+//     console.log("hello guys");
+//   }
+// }
 
-const studentA = new Student("studentA", "good");
+// const studentA = new Student("studentA", "good");
 
-studentA.addHobby("game", "sport");
+// studentA.addHobby("game", "sport");
 
-console.log(studentA);
+// console.log(studentA);
+
+// Person.showJob();
+// studentA.sayHello();
